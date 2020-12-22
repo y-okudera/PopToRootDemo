@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct DetailView: View {
 
@@ -28,9 +29,7 @@ struct DetailView: View {
                     self.isActive = true
                 })
             }
-            StatefulNavigationLinkBuilder.build(destination: MoreDetailView(), isActive: $isActive)
-                .isDetailLink(false)
-                .navigationBarTitle("DetailView")
+            StatefulNavigationLinkBuilder.build(destination: MoreDetailView(), isActive: $isActive, navigationBarTitle: "DetailView")
         }
     }
 }

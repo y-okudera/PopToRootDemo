@@ -21,9 +21,7 @@ struct RootView: View {
                         self.isActive = true
                     })
                 }
-                StatefulNavigationLinkBuilder.build(destination: DetailView(), isActive: $isActive)
-                    .isDetailLink(false)
-                    .navigationBarTitle("RootView")
+                StatefulNavigationLinkBuilder.build(destination: DetailView(), isActive: $isActive, navigationBarTitle: "RootView")
             }
         }
         .environment(\.rootPresentationMode, self.$isActive) // ナビゲーションのルートに設定する。
